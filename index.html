@@ -380,7 +380,7 @@
   /* ============================ NOMENCLATURE — FIX WRAP ============================ */
   .nomenclature .content{ display:flex; flex-direction:column; }
   .nomenclature .grid{
-    display:grid; grid-template-columns: 1.6fr 1fr; gap:26px; flex:1; min-height:0;
+    display:grid; grid-template-columns: 1.8fr 1fr; gap:26px; flex:1; min-height:0;
     margin-top:14px;
   }
   .nomenclature .body-copy{ font-size:11px; }
@@ -410,7 +410,7 @@
   }
   .name-mark{
     border:1px solid var(--ink);
-    aspect-ratio: 1 / 1.2;
+    /* aspect-ratio: 1 / 1.2; */ flex: 1; margin-bottom: 20px;
     display:flex; align-items:center; justify-content:center;
     padding:20px; position:relative;
   }
@@ -742,7 +742,7 @@
 <section class="page cover">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">01 / 13</div>
   </header>
 
@@ -750,6 +750,7 @@
     <div class="cover-inner">
       <div class="hero">
         
+        <div class="big-mark"><img src="logo1.png" alt="CSA logo"></div>
         <div class="wordmark">Cognitive<br/>Security<br/>Agency</div>
         <div class="sub">Brand Book</div>
         <div class="vol">Volume I · First Rendering</div>
@@ -929,7 +930,7 @@
 
       <div class="name-mark">
         <div class="lbl">The Mark</div>
-        <div style="font-family: var(--doors); font-size: 52px; line-height: 1; text-align: left; text-transform: uppercase;">Cognitive<br/>Security<br/>Agency</div>
+        <div style="font-family: var(--doors); font-size: 32px; line-height: 1; text-align: left; text-transform: uppercase;">Cognitive<br/>Security<br/>Agency</div>
         <div class="sub">Typographic substitute · DOORS rendering</div>
       </div>
     </div>
@@ -1401,15 +1402,15 @@
     <div class="glyph">† · ✠ · ☧ · ⌖ · †</div>
 
     
-    <div class="body-copy" style="max-width:52ch; text-align:center; font-family: var(--offbit); border: 2px solid var(--ink); padding: 24px;">
-      <p style="font-weight: bold; font-size: 14px; margin-bottom: 12px; letter-spacing: 0.1em;">WARNING: UNAUTHORIZED COGNITIVE EXPOSURE</p>
-      <p style="font-size: 11px; margin-bottom: 0;">This document contains active memetic architecture. Subjects interacting with this material without an administered dose of Opal are subject to immediate algorithmic quarantine. The Agency takes no responsibility for the subsequent collapse of externally managed reward loops.</p>
+    <div class="body-copy" style="max-width:52ch; text-align:center;">
+      <p>The Psy Op Era has begun.</p>
+      <p>Your attention is not broken. It is buried. The Agency provides the infrastructure to dig it out. Thou shalt not disfigure the soul.</p>
     </div>
 
 
-    <div class="cap muted" style="margin-top:20px;">
-      CSA/01 · Paris, France · Rendered 04·14·2026<br/>
-      Opal × Grimes · Kinetic Revision
+    <div class="cap muted" style="margin-top:20px; font-family: var(--offbit); border: 1px solid var(--ink); padding: 12px; text-align: center;">
+      <span style="font-weight: bold; display: block; margin-bottom: 4px;">WARNING: UNAUTHORIZED COGNITIVE EXPOSURE</span>
+      This document contains active memetic architecture. Subjects interacting with this material without an administered dose of Opal are subject to immediate algorithmic quarantine. The Agency takes no responsibility for the subsequent collapse of externally managed reward loops.
     </div>
     <div class="terminal-cta" style="margin-top:40px; text-align:center; font-family:var(--offbit); font-size:12px; font-weight:bold;">
       <a href="mailto:handler@decemberclaw.com" style="display:block; color:var(--ink); text-decoration:none; margin-bottom:16px;">[ REQUEST ASSET DISPENSATION ]</a>
