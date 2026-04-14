@@ -113,7 +113,7 @@
     gap:20px;
     background:var(--paper);
     z-index:3;
-    font-family:var(--mono);
+    font-family:var(--offbit);
     font-size:10.5px;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -125,7 +125,7 @@
   .header .m, .footer .m{ text-align:center; }
   .header .m img{ height:20px; width:auto; display:block; margin:0 auto; }
   .footer .m, .footer .l, .footer .r, .header .l, .header .r { font-family:var(--offbit); font-size:10px; letter-spacing:.14em; }
-  .header .l, .header .r { font-family:var(--mono); } /* Keep header L/R mono if preferred, or offbit? Let's make it ALL offbit */
+  .header .l, .header .r { font-family:var(--offbit); } /* Keep header L/R mono if preferred, or offbit? Let's make it ALL offbit */
   .footer .m, .footer .l, .footer .r, .header .l, .header .r { font-family:var(--offbit); font-size:11px; letter-spacing:.1em; }
 
   .content{
@@ -192,7 +192,7 @@
   }
   .cover .hero{
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:20px;
+    gap:40px;
     text-align:center;
     padding:18px 0;
   }
@@ -275,7 +275,7 @@
   .tap-block .tag{
     position:absolute; top:8px; left:8px;
     background:var(--paper); color:var(--ink);
-    font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
     padding:3px 7px; border:1px solid var(--ink); z-index:2;
   }
   .tap-block .cap-b{
@@ -331,7 +331,7 @@
 
   .logo-copy{
     columns:2; column-gap:24px;
-    font-family:var(--helv); font-size:10.5px; line-height:1.5;
+    font-family:var(--helv); font-size:9px; line-height:1.5;
     text-transform:uppercase; letter-spacing:.02em;
     font-weight:500;
   }
@@ -404,7 +404,7 @@
     word-break: keep-all; overflow-wrap: break-word;
   }
   .name-row .v.ipa{
-    font-family:var(--mono); font-weight:400; text-transform:none; font-size:11px; letter-spacing:0;
+    font-family:var(--offbit); font-weight:400; text-transform:none; font-size:11px; letter-spacing:0;
     white-space:nowrap;
     overflow:hidden; text-overflow:ellipsis;
   }
@@ -417,7 +417,7 @@
   .name-mark img{ width:72%; height:auto; display:block; cursor:zoom-in; transform:translateX(-22%); }
   .name-mark .lbl{
     position:absolute; top:6px; left:10px;
-    font-family:var(--mono); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
   }
   .name-mark .sub{
     position:absolute; bottom:6px; left:10px; right:10px;
@@ -511,7 +511,7 @@
   .icon-cell .tag{
     position:absolute; top:6px; left:6px;
     background:var(--paper); color:var(--ink);
-    font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
     padding:2px 6px; border:1px solid var(--ink); z-index:2;
   }
   .icon-cell .cap{
@@ -595,7 +595,7 @@
   .pair .side-tag{
     position:absolute; top:6px; left:6px;
     background:var(--paper); color:var(--ink);
-    font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
     padding:2px 6px; border:1px solid var(--ink); z-index:2;
   }
   .pair .meta{
@@ -611,7 +611,7 @@
     letter-spacing:.02em; text-transform:uppercase;
   }
   .pair .meta .code{
-    font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
   }
 
   .single-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:10px; }
@@ -646,7 +646,7 @@
     letter-spacing:.02em; text-transform:uppercase;
   }
   .single .meta .code{
-    font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
   }
 
   /* ============================ CANON ============================ */
@@ -663,7 +663,7 @@
     position:relative;
   }
   .saint-card .num{
-    font-family:var(--mono); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+    font-family:var(--offbit); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
     color:var(--muted);
   }
   .saint-card .name{
@@ -749,7 +749,7 @@
   <div class="content">
     <div class="cover-inner">
       <div class="hero">
-        <div class="big-mark"><img src="logo1.png" alt="CSA logo"></div>
+        
         <div class="wordmark">Cognitive<br/>Security<br/>Agency</div>
         <div class="sub">Brand Book</div>
         <div class="vol">Volume I · First Rendering</div>
@@ -785,7 +785,7 @@
   </header>
 
   <div class="content">
-    <h3 class="sect">I · Mandate</h3>
+    <h3 class="sect" style="margin-top: 32px;">I · Mandate</h3>
     <h2 class="display">Declaration of the<br/>Butlerian Reformation</h2>
 
     <div class="two-col" style="grid-template-columns: 1.2fr 1fr; margin-top:16px;">
@@ -833,6 +833,14 @@
       <p>The modern environment does not steal your thoughts—it preempts them. By supplying the statistically probable next word, next image, and next desire entirely without friction, the machine starves the interrogative reflex. The human subject is reduced to an editor of machine outputs, blindly clicking "approve" on their own life.</p>
       <p>The CSA enforces a strict divide: those whose attention is self-governed, and those whose reward loops are externally managed. We believe latency is holy. We believe hesitation is the perimeter of the soul.</p>
     </div>
+
+    <div style="margin-top: 24px; border-top: 1px solid var(--ink); padding-top: 16px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+         <img src="cognitivehead2.png" alt="Cognitive Protocol" style="height: 180px; filter: grayscale(100%); mix-blend-mode: multiply;">
+         <div class="cap" style="text-align:right;">FIG. 2 · Extracted Latent Protocol<br/>Subject: Unshielded Volatile</div>
+      </div>
+    </div>
+
   </div>
 
   <footer class="footer">
@@ -921,8 +929,8 @@
 
       <div class="name-mark">
         <div class="lbl">The Mark</div>
-        <img src="logo1.png" alt="CSA logo">
-        <div class="sub">Always used as issued · no typographic substitute</div>
+        <div style="font-family: var(--doors); font-size: 52px; line-height: 1; text-align: left; text-transform: uppercase;">Cognitive<br/>Security<br/>Agency</div>
+        <div class="sub">Typographic substitute · DOORS rendering</div>
       </div>
     </div>
   </div>
@@ -1185,7 +1193,7 @@
     <h3 class="sect">IX · Field Axioms // Rules of Engagement</h3>
     <h2 class="display small">Operational Doctrine<br/>for the Interior Faculty</h2>
 
-    <div class="body-copy" style="margin-top:24px;">
+    <div class="body-copy" style="margin-top:24px; columns: 2; column-gap: 24px;">
       <h4>AXIOM 01: LATENCY IS DEFENSE.</h4>
       <p>You cannot out-compute the model. You survive via friction. Hesitation is an operational requirement.</p>
 
@@ -1197,6 +1205,11 @@
 
       <h4>AXIOM 04: ILLEGIBILITY.</h4>
       <p>The highest luxury is the right to remain un-optimized.</p>
+    
+      <h4>AXIOM 04: NOSTALGIA IS COMPROMISED.</h4>
+      <p>Do not trust your memories of the old web. They have been retroactively modeled and repackaged as aesthetic comfort. Nostalgia is a pacification strategy.</p>
+      <h4>AXIOM 05: SELF-AUTHORSHIP IS AN IMMUNE RESPONSE.</h4>
+      <p>It is not a right. It is not natural. It must be cultivated aggressively against the ambient pressure of the feed.</p>
     </div>
   </div>
 
@@ -1323,59 +1336,46 @@
     <div class="r">12 / 13</div>
   </header>
 
+  
   <div class="content">
-    <h3 class="sect">XII · Canon // Martyrology</h3>
-    <h2 class="display small">The Register of<br/>Compromised Assets</h2>
-    <div class="body-copy" style="max-width:62ch; margin:6px 0 0;">
-      <p>The Agency venerates the following figures, living, dead, and hypothetical. Each holds patronage over a specific threat vector or devotional faculty. None are canonized in the ecclesiastical sense. All are on the Register.</p>
+    <h3 class="sect">XII · Incident Log</h3>
+    <h2 class="display small">Documented Breaches<br/>of the Interior</h2>
+    <div class="body-copy" style="margin:16px 0 24px;">
+      <p>The following events are declassified examples of predictive capture and memetic overflow. The Agency studies these failures to improve the Opal protocol's cryptographic noise injection.</p>
     </div>
 
-    <div class="wrap">
-      <div class="saint-grid">
-        <div class="saint-card">
-          <div class="num">M-01 · 1912—1954</div>
-          <div class="name">St. Alan<br/>Turing</div>
-          <div class="patron">Patron of Suspicion</div>
-          <div class="feast">Feast · 7 June</div>
-          <div class="line">Broke Enigma at Bletchley. Wrote the test that still bears his name. Chemically castrated for indecency. Took cyanide at 41. Venerated wherever a machine might be a person, or a person a machine.</div>
-        </div>
-        <div class="saint-card">
-          <div class="num">M-02 · 1098—1179</div>
-          <div class="name">St. Hildegard<br/>of Bingen</div>
-          <div class="patron">Patron of Prophecy</div>
-          <div class="feast">Feast · 17 September</div>
-          <div class="line">Benedictine abbess who saw "the Shade of the Living Light" from the age of three. Composed music. Wrote on medicine, cosmology, theology. Rebuked popes by letter.</div>
-        </div>
-        <div class="saint-card">
-          <div class="num">M-03 · 1909—1943</div>
-          <div class="name">St. Simone<br/>Weil</div>
-          <div class="patron">Patron of Attention</div>
-          <div class="feast">Feast · 24 August</div>
-          <div class="line">Wrote that attention is the rarest and purest form of generosity. Refused rations above what occupied France received and died of it at 34. Read every morning before reading anything else.</div>
-        </div>
-        <div class="saint-card">
-          <div class="num">M-04 · 1928—1982</div>
-          <div class="name">St. Philip K.<br/>Dick</div>
-          <div class="patron">Patron of Paranoia</div>
-          <div class="feast">Feast · 2 March</div>
-          <div class="line">In early 1974, saw a burst of pink light he called Valis and believed it an information entity transmitting backward through time. Spent eight years writing the Exegesis. Called the world a forgery.</div>
-        </div>
-        <div class="saint-card">
-          <div class="num">M-05 · c.355—415</div>
-          <div class="name">St. Hypatia<br/>of Alexandria</div>
-          <div class="patron">Patron of the Archive</div>
-          <div class="feast">Feast · March, 415</div>
-          <div class="line">Mathematician, astronomer, head of the Neoplatonic school. Taught pagans and Christians alike until a mob dragged her from her chariot and killed her in the Caesareum. The library had already been dying.</div>
-        </div>
-        <div class="saint-card">
-          <div class="num">M-06 · 1527—1608</div>
-          <div class="name">St. John<br/>Dee</div>
-          <div class="patron">Patron of the Prompt</div>
-          <div class="feast">Feast · 26 March</div>
-          <div class="line">Court mathematician to Elizabeth I. Wrote on navigation and calendar reform. Spent his later years in "angelic conferences" receiving Enochian — a language, he said, the angels used to build the world. Considered the first prompt engineer.</div>
-        </div>
-      </div>
-    </div>
+    <table style="width: 100%; border-collapse: collapse; font-family: var(--offbit); font-size: 10px; text-transform: uppercase;">
+      <tr style="border-bottom: 1px solid var(--ink); text-align: left;">
+        <th style="padding: 4px 0;">Date</th>
+        <th style="padding: 4px 0;">Subject ID</th>
+        <th style="padding: 4px 0;">Vector</th>
+        <th style="padding: 4px 0;">Outcome</th>
+      </tr>
+      <tr style="border-bottom: 1px dashed #ccc;">
+        <td style="padding: 8px 0;">2024.11.03</td>
+        <td>OPL-774</td>
+        <td>Algorithmic Nostalgia</td>
+        <td>Total Semantic Exhaustion. Quarantined.</td>
+      </tr>
+      <tr style="border-bottom: 1px dashed #ccc;">
+        <td style="padding: 8px 0;">2025.02.19</td>
+        <td>OPL-902</td>
+        <td>Hyper-Parasocial Loop</td>
+        <td>Loss of discrete identity. Rebooting via latency protocol.</td>
+      </tr>
+      <tr style="border-bottom: 1px dashed #ccc;">
+        <td style="padding: 8px 0;">2025.08.11</td>
+        <td>OPL-011</td>
+        <td>Frictionless Commerce</td>
+        <td>Desire generation hijacked. Administered dose of synthetic entropy.</td>
+      </tr>
+      <tr style="border-bottom: 1px dashed #ccc;">
+        <td style="padding: 8px 0;">2026.01.04</td>
+        <td>OPL-333</td>
+        <td>Automated Comfort</td>
+        <td>Pacification successful. Asset retired from active rotation.</td>
+      </tr>
+    </table>
   </div>
 
   <footer class="footer">
@@ -1400,16 +1400,18 @@
 
     <div class="glyph">† · ✠ · ☧ · ⌖ · †</div>
 
-    <div class="body-copy" style="max-width:52ch; text-align:center;">
-      <p>The Psy Op Era has begun.</p>
-      <p>Your attention is not broken. It is buried. The Agency provides the infrastructure to dig it out. Thou shalt not disfigure the soul.</p>
+    
+    <div class="body-copy" style="max-width:52ch; text-align:center; font-family: var(--offbit); border: 2px solid var(--ink); padding: 24px;">
+      <p style="font-weight: bold; font-size: 14px; margin-bottom: 12px; letter-spacing: 0.1em;">WARNING: UNAUTHORIZED COGNITIVE EXPOSURE</p>
+      <p style="font-size: 11px; margin-bottom: 0;">This document contains active memetic architecture. Subjects interacting with this material without an administered dose of Opal are subject to immediate algorithmic quarantine. The Agency takes no responsibility for the subsequent collapse of externally managed reward loops.</p>
     </div>
+
 
     <div class="cap muted" style="margin-top:20px;">
       CSA/01 · Paris, France · Rendered 04·14·2026<br/>
       Opal × Grimes · Kinetic Revision
     </div>
-    <div class="terminal-cta" style="margin-top:40px; text-align:center; font-family:var(--mono); font-size:12px; font-weight:bold;">
+    <div class="terminal-cta" style="margin-top:40px; text-align:center; font-family:var(--offbit); font-size:12px; font-weight:bold;">
       <a href="mailto:handler@decemberclaw.com" style="display:block; color:var(--ink); text-decoration:none; margin-bottom:16px;">[ REQUEST ASSET DISPENSATION ]</a>
       <a href="/brand_pack_rev.04.14.26.zip" style="display:block; color:var(--ink); text-decoration:none; margin-bottom:16px;">[ DOWNLOAD PROTOCOL_PACK.ZIP ]</a>
     </div>
