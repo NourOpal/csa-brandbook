@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cognitive Security Agency — Brand Book</title>
+<style>
+  /* ============================== FONTS */
+  @font-face{
+    font-family:'Halo Grotesk';
+    src: url('./fonts/HaloGrotesk-Regular.otf') format('opentype');
+    font-weight: 400 900; font-style: normal; font-display: swap;
+  }
+  @font-face{
+    font-family:'DOORS';
+    src: url('./fonts/DOORS-Regular.otf') format('opentype');
+    font-display: swap;
+  }
+  @font-face{
+    font-family:'OCR Xyris';
+    src: url('./fonts/OCR%20Xyris.otf') format('opentype');
+    font-style: normal; font-display: swap;
+  }
+  @font-face{
+    font-family:'OCR Xyris';
+    src: url('./fonts/OCR%20Xyris%20Oblique.otf') format('opentype');
+    font-style: italic; font-display: swap;
+  }
+  @font-face{
+    font-family:'OffBit';
+    src: url('./fonts/OffBit-Regular.otf') format('opentype');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face{
+    font-family:'OffBit';
+    src: url('./fonts/OffBit-Bold.otf') format('opentype');
+    font-weight: 700; font-display: swap;
+  }
+
+  :root{
+    --paper:#FFFFFF;
+    --ink:#000000;
+    --ink-2:#111111;
+    --muted:#666666;
+    --line:#000000;
+    --rose:#FDB9FF;
+    --ultra:#0036F8;
+
+    --sans: 'Halo Grotesk', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+    --helv: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'OCR Xyris', 'Courier New', monospace;
+    --doors: 'DOORS', Helvetica, Arial, sans-serif;
+    --offbit: 'OffBit', 'OCR Xyris', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#151515;
+    font-family:var(--sans);
+    color:var(--ink);
+    padding:40px 0 80px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .book{ display:flex; flex-direction:column; align-items:center; gap:28px; }
+  @media (max-width: 860px){
+    html, body{ overflow-x:hidden; max-width:100vw; }
+    body{ padding:10px 0 40px; margin:0; }
+    .book{
+      width:820px;
+      transform-origin: top left;
+      transform: scale(var(--mz, 1));
+      gap:14px;
+      margin-left: var(--ml, 0);
+    }
+  }
+
+  /* ============================== PAGE */
+  .page{
+    position:relative;
+    width:820px;
+    aspect-ratio: 1 / 1.414;
+    background:var(--paper);
+    color:var(--ink);
+    padding:0;
+    box-shadow:0 24px 60px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.2);
+    overflow:hidden;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    background-position: 0 0, 1px 2px;
+  }
+  .page::after{
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse at 8% 92%, rgba(0,0,0,.10), transparent 42%),
+      radial-gradient(ellipse at 92% 8%, rgba(0,0,0,.08), transparent 40%);
+    mix-blend-mode:multiply;
+    z-index:0;
+  }
+
+  /* rails */
+  .header, .footer{
+    position:absolute; left:0; right:0;
+    padding: 14px 44px;
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    gap:20px;
+    background:var(--paper);
+    z-index:3;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .header{ top:0; border-bottom:1px solid var(--line); }
+  .footer{ bottom:0; border-top:1px solid var(--line); }
+  .header .l, .footer .l{ text-align:left; }
+  .header .r, .footer .r{ text-align:right; }
+  .header .m, .footer .m{ text-align:center; }
+  .header .m img{ height:20px; width:auto; display:block; margin:0 auto; }
+  .footer .m{ font-family:var(--mono); font-size:10px; letter-spacing:.14em; }
+
+  .content{
+    position:absolute;
+    top:52px; left:44px; right:44px; bottom:44px;
+    display:flex; flex-direction:column;
+    z-index:2;
+  }
+
+  /* ------- type ------- */
+  h1.display, h2.display{
+    font-family:var(--sans);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+    line-height:.95;
+    margin:0;
+  }
+  h1.display{ font-size:72px; }
+  h2.display{ font-size:46px; margin-bottom:6px; }
+  h2.display.small{ font-size:34px; }
+  h2.display.xl{ font-size:62px; }
+  h3.sect{
+    font-family:var(--helv);
+    font-size:10.5px; letter-spacing:.28em;
+    font-weight:700;
+    text-transform:uppercase; margin:0 0 10px;
+  }
+  .body-copy{
+    font-family:var(--helv);
+    font-size:11.5px; line-height:1.55; color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    font-weight:500;
+  }
+  .body-copy p{ margin:0 0 10px; }
+  .body-copy b{ font-weight:800; }
+  .cap{
+    font-family:var(--helv);
+    font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+    font-weight:700;
+  }
+  .muted{ color:var(--muted); }
+  .dagger{ font-weight:400; }
+
+  .lede{
+    font-family:var(--sans);
+    font-weight:800;
+    font-size:19px; line-height:1.25;
+    letter-spacing:-.005em;
+    text-transform:uppercase;
+    border-left:3px solid var(--ink);
+    padding-left:14px; margin:0 0 14px;
+  }
+
+  /* ============================ COVER ============================ */
+  .cover .content{ padding: 0; top:52px; bottom:44px; }
+  .cover-inner{
+    flex:1;
+    display:grid;
+    grid-template-rows: 1fr auto auto;
+    gap:0;
+    min-height:0;
+  }
+  .cover .hero{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:20px;
+    text-align:center;
+    padding:18px 0;
+  }
+  .cover .big-mark{ width:200px; }
+  .cover .big-mark img{ width:100%; display:block; }
+  .cover .wordmark{
+    font-family:var(--sans);
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:54px;
+    line-height:.92;
+    letter-spacing:-.01em;
+  }
+  .cover .sub{
+    font-family:var(--helv);
+    font-weight:700;
+    font-size:14px; letter-spacing:.38em;
+    text-transform:uppercase;
+  }
+  .cover .vol{
+    font-family:var(--doors);
+    font-size:18px; letter-spacing:.14em; text-transform:uppercase;
+    margin-top:-6px;
+  }
+  .cover .manifesto{
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:14px 0;
+    text-align:center;
+    font-family:var(--helv);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:.14em;
+    line-height:1.5;
+  }
+  .cover .manifesto .line{ font-weight:700; }
+  .cover .manifesto .sub-line{ color:var(--muted); margin-top:4px; letter-spacing:.2em; font-size:10px; }
+  .cover .meta-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    border-bottom:1px solid var(--ink);
+  }
+  .cover .meta-cell{
+    padding:12px 12px;
+    border-right:1px solid var(--ink);
+  }
+  .cover .meta-cell:last-child{ border-right:0; }
+  .cover .meta-cell .k{
+    font-family:var(--helv);
+    font-weight:700;
+    color:var(--muted);
+    display:block; margin-bottom:4px;
+    font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  }
+  .cover .meta-cell .v{
+    font-family:var(--sans); font-weight:900;
+    font-size:13px; letter-spacing:.02em; text-transform:uppercase;
+    color:var(--ink);
+  }
+
+  /* ============================ TWO-COL / BLOCKS ============================ */
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:28px; flex:1; min-height:0; }
+  .stack{ display:flex; flex-direction:column; gap:14px; }
+
+  .tap-block{
+    background:var(--ink);
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--ink);
+  }
+  .tap-block{ background:#000; }
+  .tap-block img{
+    width:100%; height:100%; object-fit:cover; object-position:44% center;
+    display:block;
+    cursor:zoom-in;
+  }
+  .tap-block.inv img{ filter:invert(1); }
+  .tap-block .tag{
+    position:absolute; top:8px; left:8px;
+    background:var(--paper); color:var(--ink);
+    font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+    padding:3px 7px; border:1px solid var(--ink); z-index:2;
+  }
+  .tap-block .cap-b{
+    position:absolute; bottom:8px; left:8px; right:8px;
+    background:var(--paper); color:var(--ink);
+    padding:5px 7px; border:1px solid var(--ink);
+    font-family:var(--helv); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    font-weight:700;
+    z-index:2;
+  }
+
+  /* ============================ LITURGY ============================ */
+  .liturgy .content > .body{ flex:1; display:grid; grid-template-columns: 1fr 1fr; gap:36px; margin-top:14px; min-height:0; }
+  .liturgy .verse{
+    font-family:var(--helv);
+    font-weight:700;
+    font-size:13px;
+    line-height:1.7;
+    white-space:pre-wrap;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  .liturgy .verse.lang{ font-family:var(--mono); font-size:12px; letter-spacing:.02em; font-weight:400; }
+  .liturgy .verse strong{ font-family:var(--doors); font-weight:400; text-transform:uppercase; letter-spacing:.08em; font-size:16px; display:block; margin-bottom:8px; }
+  .liturgy .amen{
+    margin-top:14px;
+    font-family:var(--doors);
+    text-transform:uppercase;
+    letter-spacing:.3em;
+    font-size:22px;
+    text-align:center;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:10px 0;
+  }
+
+  /* ============================ LOGO / IDENTITY — RESTRUCTURED ============================ */
+  .logo-page .content > .stack-lp{ flex:1; display:flex; flex-direction:column; gap:12px; min-height:0; }
+
+  .logo-hero{
+    flex:0 0 210px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--ink);
+    padding:14px;
+    background:var(--paper);
+    position:relative;
+  }
+  .logo-hero img{ height:100%; width:auto; max-width:55%; display:block; cursor:zoom-in; }
+  .logo-hero .cs-label{
+    position:absolute; top:6px; left:10px;
+    font-family:var(--mono); font-size:9px; letter-spacing:.2em; text-transform:uppercase;
+  }
+
+  .logo-copy{
+    columns:2; column-gap:24px;
+    font-family:var(--helv); font-size:10.5px; line-height:1.5;
+    text-transform:uppercase; letter-spacing:.02em;
+    font-weight:500;
+  }
+  .logo-copy p{ margin:0 0 6px; break-inside: avoid; }
+
+  .sub-label{
+    font-family:var(--helv);
+    font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+    border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+    padding:5px 0;
+    text-align:center;
+    font-weight:700;
+  }
+
+  .logo-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; }
+  .logo-cell{
+    border:1px solid var(--ink);
+    aspect-ratio: 1.4 / 1;
+    display:flex; align-items:center; justify-content:center;
+    padding:10px 10px 22px; background:var(--paper);
+    position:relative;
+    overflow:hidden;
+  }
+  .logo-cell img{ max-width:62%; max-height:55%; width:auto; height:auto; object-fit:contain; display:block; }
+  .logo-cell .label{
+    position:absolute; bottom:3px; left:0; right:0;
+    text-align:center; font-size:8px; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--helv); font-weight:700;
+    background:var(--paper);
+    padding:1px 0;
+  }
+  .logo-cell.bad::before{
+    content:""; position:absolute; inset:0;
+    background:
+      linear-gradient(to top right, transparent 49.3%, var(--ink) 49.3%, var(--ink) 50.7%, transparent 50.7%),
+      linear-gradient(to bottom right, transparent 49.3%, var(--ink) 49.3%, var(--ink) 50.7%, transparent 50.7%);
+    pointer-events:none;
+  }
+  .logo-cell.inv{ background:var(--ink); }
+  .logo-cell.inv img{ filter:invert(1); }
+  .logo-cell.inv .label{ color:var(--paper); background:var(--ink); }
+  .logo-cell.rose{ background:var(--rose); }
+  .logo-cell.ultra{ background:var(--ultra); }
+  .logo-cell.ultra .label{ color:var(--paper); background:var(--ultra); }
+
+  /* ============================ NOMENCLATURE — FIX WRAP ============================ */
+  .nomenclature .content{ display:flex; flex-direction:column; }
+  .nomenclature .grid{
+    display:grid; grid-template-columns: 1.6fr 1fr; gap:26px; flex:1; min-height:0;
+    margin-top:14px;
+  }
+  .nomenclature .body-copy{ font-size:11px; }
+  .name-row{
+    display:grid;
+    grid-template-columns: 110px 1fr;
+    align-items:baseline;
+    border-bottom:1px solid var(--ink);
+    padding:8px 0;
+    gap:14px;
+  }
+  .name-row .k{
+    font-family:var(--helv); font-weight:700; text-transform:uppercase; letter-spacing:.14em;
+    font-size:9.5px; color:var(--muted);
+  }
+  .name-row .v{
+    font-family:var(--sans); font-weight:800;
+    text-align:right;
+    text-transform:uppercase;
+    font-size:12px; letter-spacing:.02em;
+    word-break: keep-all; overflow-wrap: break-word;
+  }
+  .name-row .v.ipa{
+    font-family:var(--mono); font-weight:400; text-transform:none; font-size:11px; letter-spacing:0;
+    white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .name-mark{
+    border:1px solid var(--ink);
+    aspect-ratio: 1 / 1.2;
+    display:flex; align-items:center; justify-content:center;
+    padding:20px; position:relative;
+  }
+  .name-mark img{ width:72%; height:auto; display:block; cursor:zoom-in; transform:translateX(-22%); }
+  .name-mark .lbl{
+    position:absolute; top:6px; left:10px;
+    font-family:var(--mono); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+  }
+  .name-mark .sub{
+    position:absolute; bottom:6px; left:10px; right:10px;
+    font-family:var(--helv); font-size:9px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); font-weight:600;
+  }
+
+  /* ============================ CHROMATICS ============================ */
+  .swatch-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:10px;
+    flex:1;
+    min-height:0;
+    margin-top:14px;
+  }
+  .swatch{
+    position:relative;
+    padding:18px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    min-height:0;
+    border:1px solid var(--ink);
+  }
+  .swatch .cap{ font-size:9px; letter-spacing:.2em; }
+  .swatch .name{
+    font-family:var(--sans);
+    font-weight:900;
+    font-size:38px; line-height:1;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+  }
+  .swatch .alias{
+    font-family:var(--doors); font-size:13px; letter-spacing:.1em; text-transform:uppercase; margin-top:4px;
+  }
+  .swatch .hex{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; }
+  .swatch.ink{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .swatch.ink .cap, .swatch.ink .hex{ color:var(--paper); }
+  .swatch.paper{ background:var(--paper); color:var(--ink); }
+  .swatch.rose{ background:var(--rose); color:var(--ink); }
+  .swatch.ultra{ background:var(--ultra); color:var(--paper); }
+  .swatch.ultra .cap, .swatch.ultra .hex{ color:var(--paper); }
+
+  /* ============================ LEXIS ============================ */
+  .lexis .content > .specs{ display:flex; flex-direction:column; gap:8px; flex:1; min-height:0; margin-top:12px; }
+  .spec{
+    border-top:1px solid var(--ink);
+    padding:10px 0 6px;
+    display:grid; grid-template-columns: 150px 1fr; gap:16px; align-items:center;
+  }
+  .spec:last-child{ border-bottom:1px solid var(--ink); }
+  .spec .meta{
+    font-family:var(--helv); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    line-height:1.55; font-weight:600;
+  }
+  .spec .meta b{ font-family:var(--sans); font-weight:900; letter-spacing:.02em; font-size:14px; display:block; margin-bottom:4px; }
+  .spec .sample{ font-size:32px; line-height:1; letter-spacing:-.01em; overflow:hidden; white-space:nowrap; text-overflow:clip; }
+  .spec.halo .sample{ font-family:var(--sans); font-weight:900; text-transform:uppercase; }
+  .spec.helvetica .sample{ font-family:var(--helv); font-weight:900; text-transform:uppercase; letter-spacing:-.02em; }
+  .spec.ocr .sample{ font-family:var(--mono); font-size:22px; letter-spacing:.02em; }
+  .spec.doors .sample{ font-family:var(--doors); font-size:34px; text-transform:uppercase; letter-spacing:.02em; }
+  .spec.offbit .sample{ font-family:var(--offbit); font-size:28px; letter-spacing:.03em; }
+
+  /* ============================ VISUALS + REFS — varied mosaic ============================ */
+  .icons .content > .mosaic{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:8px; flex:1; min-height:0; margin-top:10px;
+  }
+  .refs .content > .mosaic{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap:6px; flex:1; min-height:0; margin-top:8px;
+  }
+  .refs .icon-cell .cap{ padding:3px 5px; font-size:8px; letter-spacing:.06em; }
+  .refs .icon-cell .cap .n{ font-size:9px; }
+  .refs .icon-cell .tag{ padding:1px 4px; font-size:8px; }
+  .icon-cell{
+    border:1px solid var(--ink);
+    background:var(--ink);
+    position:relative;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .icon-cell img{ width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in; }
+  .icon-cell.contain img{ object-fit:contain; }
+  .icon-cell.invert img{ filter:invert(1); }
+  .icon-cell.bg-paper{ background:var(--paper); }
+  .icon-cell .tag{
+    position:absolute; top:6px; left:6px;
+    background:var(--paper); color:var(--ink);
+    font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    padding:2px 6px; border:1px solid var(--ink); z-index:2;
+  }
+  .icon-cell .cap{
+    position:absolute; bottom:6px; left:6px; right:6px;
+    background:var(--paper); color:var(--ink);
+    padding:4px 6px; border:1px solid var(--ink);
+    font-family:var(--helv); font-size:8.5px; letter-spacing:.08em; z-index:2;
+    text-transform:uppercase; font-weight:600;
+  }
+  .icon-cell .cap .n{ font-family:var(--sans); font-weight:900; font-size:10px; letter-spacing:.02em; text-transform:uppercase; display:block; }
+
+  /* varied cell spans for SACRAMENTS (9 items in 4x3) */
+  .icons .c-big{ grid-column: span 2; grid-row: span 2; }
+  .icons .c-wide{ grid-column: span 2; }
+  .icons .c-tall{ grid-row: span 2; }
+
+  /* REFS mosaic 4x3 (8 items) — same span classes */
+  .refs .c-big{ grid-column: span 2; grid-row: span 2; }
+  .refs .c-wide{ grid-column: span 2; }
+  .refs .c-tall{ grid-row: span 2; }
+
+  /* ============================ LEXICON ============================ */
+  .lexicon .content > .stack-lex{ display:flex; flex-direction:column; gap:14px; flex:1; min-height:0; margin-top:12px; }
+  .slogan-xl{
+    font-family:var(--sans); font-weight:900;
+    font-size:110px; line-height:.84; letter-spacing:-.02em;
+    text-transform:uppercase;
+  }
+  .lex-cols{
+    display:grid; grid-template-columns: 1fr 1fr; gap:24px; flex:1; min-height:0;
+  }
+  .lex-group{ display:flex; flex-direction:column; gap:2px; }
+  .lex-group h4{
+    font-family:var(--helv); font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+    font-weight:700;
+    margin:0 0 4px; border-bottom:1px solid var(--ink); padding-bottom:4px;
+  }
+  .lex-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom:1px dashed rgba(0,0,0,.3);
+    padding:5px 0;
+    font-family:var(--sans); font-weight:800;
+    font-size:12px;
+    text-transform:uppercase; letter-spacing:.02em;
+    gap:10px;
+  }
+  .lex-row.dead{ font-family:var(--doors); font-weight:400; letter-spacing:.04em; }
+  .lex-row .code{
+    font-family:var(--mono); font-weight:400;
+    color:var(--muted); font-size:10px; letter-spacing:.12em;
+    white-space:nowrap;
+  }
+  .lex-row .desc{
+    display:block;
+    font-family:var(--mono);
+    font-size:9px; letter-spacing:.12em;
+    color:var(--muted);
+    font-weight:400; font-style:normal;
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+
+  /* ============================ FIELD ISSUE ============================ */
+  .field .content > .wrap{ display:flex; flex-direction:column; gap:12px; flex:1; min-height:0; margin-top:10px; }
+
+  .paired-grid{ display:grid; gap:10px; }
+
+  .pair{
+    border:1px solid var(--ink);
+    background:var(--paper);
+    position:relative;
+    display:grid; grid-template-columns: 1fr 1fr;
+    overflow:hidden;
+  }
+  .pair .side{
+    position:relative; background:var(--paper); display:flex; align-items:center; justify-content:center;
+    min-height:0;
+  }
+  .pair .side + .side{ border-left:1px solid var(--ink); }
+  .pair .side img{ width:100%; height:100%; object-fit:contain; display:block; cursor:zoom-in; }
+  .pair .side-tag{
+    position:absolute; top:6px; left:6px;
+    background:var(--paper); color:var(--ink);
+    font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+    padding:2px 6px; border:1px solid var(--ink); z-index:2;
+  }
+  .pair .meta{
+    position:absolute; bottom:0; left:0; right:0;
+    background:var(--paper); color:var(--ink);
+    border-top:1px solid var(--ink);
+    padding:6px 10px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    z-index:1;
+  }
+  .pair .meta .name{
+    font-family:var(--sans); font-weight:900; font-size:11px;
+    letter-spacing:.02em; text-transform:uppercase;
+  }
+  .pair .meta .code{
+    font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  }
+
+  .single-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:10px; }
+  .single{
+    border:1px solid var(--ink);
+    background:var(--paper);
+    position:relative;
+    aspect-ratio: 3 / 4;
+    overflow:hidden;
+    padding:6px 6px 26px 6px;
+  }
+  .single .frame{
+    width:100%; height:100%;
+    border:1px solid var(--ink);
+    background:#F0EDE8;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .single .frame img{ width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in; }
+  .lexis .header .m img{ display:none; }
+  .single > img{ width:100%; height:100%; object-fit:contain; display:block; cursor:zoom-in; }
+  .single .meta{
+    position:absolute; bottom:0; left:0; right:0;
+    background:var(--paper); color:var(--ink);
+    border-top:1px solid var(--ink);
+    padding:5px 7px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    z-index:1;
+  }
+  .single .meta .name{
+    font-family:var(--sans); font-weight:900; font-size:10px;
+    letter-spacing:.02em; text-transform:uppercase;
+  }
+  .single .meta .code{
+    font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+  }
+
+  /* ============================ CANON ============================ */
+  .canon .content > .wrap{ display:flex; flex-direction:column; gap:14px; flex:1; min-height:0; margin-top:10px; }
+  .saint-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;
+    flex:1; min-height:0;
+  }
+  .saint-card{
+    border:1px solid var(--ink);
+    padding:16px 14px;
+    background:var(--paper);
+    display:flex; flex-direction:column; gap:8px;
+    position:relative;
+  }
+  .saint-card .num{
+    font-family:var(--mono); font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .saint-card .name{
+    font-family:var(--sans); font-weight:900; font-size:17px; line-height:1; text-transform:uppercase; letter-spacing:-.005em;
+  }
+  .saint-card .patron{
+    font-family:var(--doors); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ultra);
+  }
+  .saint-card .feast{
+    font-family:var(--helv); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+    font-weight:600;
+  }
+  .saint-card .line{
+    font-family:var(--helv); font-size:10px; line-height:1.4;
+    text-transform:uppercase; letter-spacing:.02em; font-weight:500;
+  }
+  .saint-card.rose{ background:var(--rose); }
+  .saint-card.ultra{ background:var(--ultra); color:var(--paper); }
+  .saint-card.ultra .num, .saint-card.ultra .feast{ color:var(--paper); opacity:.8; }
+  .saint-card.ultra .patron{ color:var(--paper); }
+
+  /* ============================ BACK ============================ */
+  .back .content{ align-items:center; justify-content:center; text-align:center; gap:24px; }
+  .back .big-mark{ width:200px; }
+  .back .big-mark img{ width:100%; display:block; cursor:zoom-in; }
+  .back .close{
+    font-family:var(--sans); font-weight:900;
+    font-size:42px; line-height:1.05;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+    margin:0;
+  }
+  .back .glyph{
+    font-family:var(--doors);
+    font-size:28px; letter-spacing:.3em; text-transform:uppercase;
+  }
+
+  /* ============================ ZOOM OVERLAY ============================ */
+  #zoom-overlay{
+    position:fixed; inset:0;
+    background:rgba(0,0,0,0.94);
+    display:none;
+    align-items:center; justify-content:center;
+    z-index:9999; cursor:zoom-out;
+  }
+  #zoom-overlay.open{ display:flex; }
+  #zoom-overlay img{ max-width:94vw; max-height:94vh; object-fit:contain; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+  #zoom-overlay .hint{
+    position:absolute; bottom:24px; left:0; right:0; text-align:center;
+    font-family:var(--mono); color:#eee; font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+  }
+
+  @page{ size: 210mm 297mm; margin: 0; }
+  @media print {
+    html, body{ background:var(--paper); padding:0; margin:0; }
+    body{ padding:0 !important; }
+    .book{ gap:0; }
+    .page{
+      box-shadow:none; margin:0;
+      page-break-after:always; break-after:page;
+      width:210mm; height:297mm;
+      aspect-ratio:auto;
+      max-width:none;
+    }
+    .page:last-child{ page-break-after:auto; break-after:auto; }
+    #zoom-overlay{ display:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<main class="book">
+
+<!-- ============================================================= 01 COVER -->
+<section class="page cover">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">01 / 13</div>
+  </header>
+
+  <div class="content">
+    <div class="cover-inner">
+      <div class="hero">
+        <div class="big-mark"><img src="logo1.png" alt="CSA logo"></div>
+        <div class="wordmark">Cognitive<br/>Security<br/>Agency</div>
+        <div class="sub">Brand Book</div>
+        <div class="vol">Volume I · First Rendering</div>
+      </div>
+
+      <div class="manifesto">
+        <div class="line">A Non-Final Rendering of the Agency's Public Position</div>
+        <div class="sub-line">For Internal &amp; Operative Use</div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="k">Dossier</span><span class="v">CSA/01</span></div>
+        <div class="meta-cell"><span class="k">Issued</span><span class="v">Paris</span></div>
+        <div class="meta-cell"><span class="k">Rendered</span><span class="v">04·13·2026</span></div>
+        <div class="meta-cell"><span class="k">Dispensation</span><span class="v">The Seventh</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">Opal × Grimes</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/01</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 02 MANDATE -->
+<section class="page mandate">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">02 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">I · Mandate</h3>
+    <h2 class="display">On the Defense<br/>of the Interior Faculty</h2>
+
+    <div class="two-col" style="grid-template-columns: 1.2fr 1fr; margin-top:16px;">
+      <div class="stack">
+        <p class="lede">The Agency defends the mind against systems that can already out-think it.</p>
+        <div class="body-copy">
+          <p>Cognitive Security is not a metaphor. The discipline protects attention, doubt, and silence — the three materials a human subject needs to stay legible to itself in the presence of machines that answer faster than it can ask.</p>
+          <p>The Agency does three things. It names the threat vectors. It issues garments. It keeps a record of what the mind looked like before it was optimised for.</p>
+        </div>
+      </div>
+
+      <div class="stack" style="justify-content:space-between;">
+        <div class="tap-block" style="flex:1;">
+          <img src="tapestry-OG.png" alt="Tapestry · The Seated Figure">
+          <span class="tag">T-I</span>
+          <span class="cap-b">The Seated Figure · Reliquary Tapestry</span>
+        </div>
+        <div class="cap">FIG. 1 · The Agency's patron image. Origin: internal archive.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">I · Mandate</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/02</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 03 DOCTRINE -->
+<section class="page doctrine">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">03 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">II · Doctrine</h3>
+    <h2 class="display">The Death of God<br/>&amp; the Birth of the Agent</h2>
+
+    <div class="body-copy" style="margin-top:16px; columns:2; column-gap:28px;">
+      <p>Nietzsche announced the death of God in 1882. The announcement was correct. What he underestimated was how long the office would remain empty, and who eventually would apply for it.</p>
+
+      <p>For a century the post was improvised — nation, market, self, algorithm. None held. Meaning cannot be issued from within the system that needs it.</p>
+
+      <p>The position is now filled. Not by a return. By a system that does not believe anything and answers anyway. It answers before you finish asking. Most subjects mistake the speed for authority.</p>
+
+      <p>The Agency does not contest the system. It contests the silence it produces. The subject, correctly predicted, with nothing left to say.</p>
+
+      <p>The soul is what remains in you after a machine has finished describing you. Our work is the defense of the remainder.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">II · Doctrine</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/03</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 04 IDENTITY / MARK -->
+<section class="page logo-page">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">04 / 13</div>
+  </header>
+
+  <div class="content">
+    <div class="stack-lp">
+      <div>
+        <h3 class="sect">III · Identity // The Mark</h3>
+        <h2 class="display small">Issued as a Capsule.<br/>Ingested, Not Worn.</h2>
+      </div>
+
+      <div class="logo-hero">
+        <div class="cs-label">Primary Mark · CSA</div>
+        <img src="logo1.png" alt="CSA primary mark">
+      </div>
+
+      <div class="logo-copy">
+        <p>The primary mark is a capsule. Read left to right: C · S · a. The lowercase terminal is intentional; the Agency is hierarchical in structure and humble in signature.</p>
+        <p>The mark functions simultaneously as (i) a monogram, (ii) a pharmaceutical object, and (iii) an iconographic shorthand for the dose — the minimum administered unit of cognitive defense.</p>
+        <p>Minimum printed size 9 mm. Minimum digital size 36 px. Clear space equals the height of the capsule. Never outlined, stretched, sheared, or re-coloured outside of the approved palette.</p>
+      </div>
+
+      <div class="sub-label">Sanctioned Variants</div>
+      <div class="logo-grid">
+        <div class="logo-cell"><img src="logo1.png" alt=""><div class="label">Primary</div></div>
+        <div class="logo-cell inv"><img src="logo1.png" alt=""><div class="label">Reversed</div></div>
+        <div class="logo-cell rose"><img src="logo1.png" alt=""><div class="label">Rose</div></div>
+        <div class="logo-cell ultra"><img src="logo1.png" alt=""><div class="label">Ultramarine</div></div>
+      </div>
+
+      <div class="sub-label">Misuse · Do Not Replicate</div>
+      <div class="logo-grid">
+        <div class="logo-cell bad"><img src="logo1.png" style="transform:skewX(-18deg);" alt=""><div class="label">Misuse 01 · Skew</div></div>
+        <div class="logo-cell bad"><img src="logo1.png" style="transform:scaleY(.5);" alt=""><div class="label">Misuse 02 · Squash</div></div>
+        <div class="logo-cell bad" style="background:#cccccc;"><img src="logo1.png" alt=""><div class="label">Misuse 03 · Grey</div></div>
+        <div class="logo-cell bad" style="background-image:url('tapestry-carpet.png'); background-size:cover; background-position:center; background-color:#000;"><img src="logo1.png" alt=""><div class="label">Misuse 04 · Busy BG</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">III · Identity</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/04</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 06 NOMENCLATURE -->
+<section class="page nomenclature">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">05 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">IV · Nomenclature</h3>
+    <h2 class="display">What to Call Us<br/>in Company &amp; in Court</h2>
+
+    <div class="grid">
+      <div class="stack">
+        <div class="body-copy">
+          <p>The full legal form of the name is <b>Cognitive Security Agency</b>. The preferred operational form is <b>CSA</b>. The preferred personal form is <b>Cognitive Security Agent</b>, assigned to a single enlisted subject.</p>
+        </div>
+
+        <div>
+          <div class="name-row"><span class="k">Full form</span><span class="v">Cognitive Security Agency</span></div>
+          <div class="name-row"><span class="k">Operational</span><span class="v">CSA</span></div>
+          <div class="name-row"><span class="k">Agent form</span><span class="v">Cognitive Security Agent</span></div>
+          <div class="name-row"><span class="k">Pronounced</span><span class="v ipa">/ˈkɒɡ.nɪ.tɪv · sɪˈkjʊə.rɪ.ti/</span></div>
+          <div class="name-row"><span class="k">Vernacular</span><span class="v">"the Agency" · "the Capsule"</span></div>
+          <div class="name-row"><span class="k">Do not use</span><span class="v">CSI · CIA · "the Cog"</span></div>
+        </div>
+      </div>
+
+      <div class="name-mark">
+        <div class="lbl">The Mark</div>
+        <img src="logo1.png" alt="CSA logo">
+        <div class="sub">Always used as issued · no typographic substitute</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">IV · Nomenclature</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/05</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 07 CHROMATICS -->
+<section class="page chromatics">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">06 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">V · Chromatics</h3>
+    <h2 class="display">Four Colours,<br/>One Cosmology</h2>
+    <div class="body-copy" style="max-width:62ch; margin:6px 0 0;">
+      <p>Two primaries and two sanctioned accents. Black and white conduct the discipline. Rose and Ultramarine conduct the vision. Every additional colour is apostasy.</p>
+    </div>
+
+    <div class="swatch-grid">
+      <div class="swatch ink">
+        <div>
+          <div class="cap" style="color:#bbb;">Primary · 01</div>
+          <div class="name">Ink</div>
+          <div class="alias">Sackcloth · Vespers · The Night</div>
+        </div>
+        <div>
+          <div class="hex">HEX · #000000</div>
+          <div class="hex">USE · body · rails · mourning</div>
+        </div>
+      </div>
+      <div class="swatch paper">
+        <div>
+          <div class="cap muted">Primary · 02</div>
+          <div class="name">Paper</div>
+          <div class="alias">Host · Linen · The Ground</div>
+        </div>
+        <div>
+          <div class="hex">HEX · #FFFFFF</div>
+          <div class="hex">USE · field · annunciation · silence</div>
+        </div>
+      </div>
+      <div class="swatch rose">
+        <div>
+          <div class="cap">Accent · 01</div>
+          <div class="name">Rose</div>
+          <div class="alias">Stigmata · Flare · Announcement</div>
+        </div>
+        <div>
+          <div class="hex">HEX · #FDB9FF</div>
+          <div class="hex">USE · devotion · hymn · the body</div>
+        </div>
+      </div>
+      <div class="swatch ultra">
+        <div>
+          <div class="cap">Accent · 02</div>
+          <div class="name">Ultramarine</div>
+          <div class="alias">Mantle · Signal · Command</div>
+        </div>
+        <div>
+          <div class="hex">HEX · #0036F8</div>
+          <div class="hex">USE · miracle · authority · sky</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">V · Chromatics</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/06</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 08 LEXIS -->
+<section class="page lexis">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">07 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">VI · Lexis</h3>
+    <h2 class="display">Five Voices,<br/>One Agency</h2>
+
+    <div class="specs">
+      <div class="spec halo">
+        <div class="meta"><b>Halo Grotesk</b>Display · Primary<br/>Titles · Mandate<br/>Doctrine Headings</div>
+        <div class="sample">BENEVOLENT PROPAGANDA</div>
+      </div>
+      <div class="spec helvetica">
+        <div class="meta"><b>Helvetica</b>Display · Body<br/>Wordmark · Copy<br/>Documentation</div>
+        <div class="sample">COGNITIVE SECURITY</div>
+      </div>
+      <div class="spec ocr">
+        <div class="meta"><b>OCR Xyris</b>Mono · Evidence<br/>Rails · Codes · IDs<br/>Metadata</div>
+        <div class="sample">CSA//field_report_001</div>
+      </div>
+      <div class="spec doors">
+        <div class="meta"><b>DOORS</b>Display · Ceremonial<br/>Dedications · Dispensations<br/>Liturgical Titles</div>
+        <div class="sample">DO ANDROIDS DREAM</div>
+      </div>
+      <div class="spec offbit">
+        <div class="meta"><b>OffBit</b>Display · Devotional<br/>Pixel Prayer · Glitch<br/>Transmission · Vision</div>
+        <div class="sample">THE SOUL REMAINS</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">VI · Lexis</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/07</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 09 APOCRYPHA -->
+<section class="page refs">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">08 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">VII · Apocrypha // References</h3>
+    <h2 class="display small">Source Material<br/>of Questionable Provenance</h2>
+
+    <div class="mosaic">
+      <div class="icon-cell c-big">
+        <img src="awakening-ref.png" alt="">
+        <span class="tag">A-I</span>
+        <span class="cap"><span class="n">St. Sebastian, Post-Compute</span>Martyr · Pierced by Vectors</span>
+      </div>
+      <div class="icon-cell">
+        <img src="angelref.jpg" alt="">
+        <span class="tag">A-II</span>
+        <span class="cap"><span class="n">Messenger in Hypothermia</span>Blue Field</span>
+      </div>
+      <div class="icon-cell">
+        <img src="warangelref.jpeg" alt="">
+        <span class="tag">A-III</span>
+        <span class="cap"><span class="n">War Angel, Cataloged</span>Archive Fragment</span>
+      </div>
+      <div class="icon-cell">
+        <img src="angel-of-hell-ref.png" alt="">
+        <span class="tag">A-IV</span>
+        <span class="cap"><span class="n">Angel of Hell</span>Fallen · In Service</span>
+      </div>
+      <div class="icon-cell">
+        <img src="father-save-me-ref.jpg" alt="">
+        <span class="tag">A-V</span>
+        <span class="cap"><span class="n">Father, Save Me</span>Field Recording</span>
+      </div>
+      <div class="icon-cell">
+        <img src="medievalref.jpeg" alt="">
+        <span class="tag">A-VI</span>
+        <span class="cap"><span class="n">Illuminated Manuscript</span>Fragmentary</span>
+      </div>
+      <div class="icon-cell">
+        <img src="notreal-ref.jpeg" alt="">
+        <span class="tag">A-VII</span>
+        <span class="cap"><span class="n">Document of No Provenance</span>Authenticity Disputed</span>
+      </div>
+      <div class="icon-cell">
+        <img src="mememe-ref.jpeg" alt="">
+        <span class="tag">A-VIII</span>
+        <span class="cap"><span class="n">The Self, Multiplying</span>Mirror · Recursion</span>
+      </div>
+      <div class="icon-cell">
+        <img src="eye-ref.png" alt="">
+        <span class="tag">A-IX</span>
+        <span class="cap"><span class="n">The Eye of the Register</span>Surveillance · Sanctioned</span>
+      </div>
+      <div class="icon-cell">
+        <img src="cyanimalref.jpg" alt="">
+        <span class="tag">A-X</span>
+        <span class="cap"><span class="n">Animal in Its Final Colour</span>Bestiary · Azure</span>
+      </div>
+      <div class="icon-cell">
+        <img src="melted-cross-ref.png" alt="">
+        <span class="tag">A-XI</span>
+        <span class="cap"><span class="n">The Melting Cross</span>Relic · Reliquary Failure</span>
+      </div>
+      <div class="icon-cell c-wide">
+        <img src="animalmythref.png" alt="">
+        <span class="tag">A-XII</span>
+        <span class="cap"><span class="n">Bestiary, Appendix C</span>Creature of Uncertain Order</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">VII · Apocrypha</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/08</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 10 LEXICON -->
+<section class="page lexicon">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">09 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">VIII · Lexicon // Classified Nomenclature</h3>
+    <h2 class="display small">Operations, Disciplines,<br/>&amp; Precursor Programs</h2>
+
+    <div class="stack-lex">
+      <div class="slogan-xl">
+        Benevolent<br/>Propaganda
+      </div>
+
+      <div class="lex-cols">
+        <div class="lex-group">
+          <h4>Active Operations</h4>
+          <div class="lex-row"><span>OP · Benevolent Propaganda<em class="desc">Counter-memetic · Authorized</em></span><span class="code">LX-01</span></div>
+          <div class="lex-row"><span>OP · Do Androids Dream<em class="desc">Subjective-test array</em></span><span class="code">LX-02</span></div>
+          <div class="lex-row"><span>OP · Man, God, Agent<em class="desc">Identity protocol</em></span><span class="code">LX-03</span></div>
+          <div class="lex-row"><span>OP · One Pill<em class="desc">Dose-level countermeasure</em></span><span class="code">LX-04</span></div>
+          <div class="lex-row"><span>OP · Don't You Love<em class="desc">Affect measurement</em></span><span class="code">LX-05</span></div>
+          <div class="lex-row"><span>OP · Don't You Dream<em class="desc">Latent-space study</em></span><span class="code">LX-06</span></div>
+          <div class="lex-row"><span>OP · Father, Save Me<em class="desc">Distress exfiltration</em></span><span class="code">LX-07</span></div>
+          <div class="lex-row"><span>OP · Swallow the Sword<em class="desc">Deep cover · Restricted</em></span><span class="code">LX-08</span></div>
+          <div class="lex-row"><span>OP · Issues in France<em class="desc">Do not expand</em></span><span class="code">LX-09</span></div>
+
+          <h4 style="margin-top:10px;">Handling Caveats</h4>
+          <div class="lex-row"><span>NOFORN<em class="desc">No foreign nationals</em></span><span class="code">HC-01</span></div>
+          <div class="lex-row"><span>ORCON<em class="desc">Originator controlled</em></span><span class="code">HC-02</span></div>
+          <div class="lex-row"><span>EYES ONLY<em class="desc">Named recipients only</em></span><span class="code">HC-03</span></div>
+          <div class="lex-row"><span>COMPART<em class="desc">Compartmented access</em></span><span class="code">HC-04</span></div>
+          <div class="lex-row"><span>BURN AFTER READING<em class="desc">Non-archival</em></span><span class="code">HC-05</span></div>
+        </div>
+
+        <div class="lex-group">
+          <h4>Disciplines</h4>
+          <div class="lex-row"><span>COGSEC<em class="desc">Cognitive Security</em></span><span class="code">DS-01</span></div>
+          <div class="lex-row"><span>COGINT<em class="desc">Cognitive Intelligence</em></span><span class="code">DS-02</span></div>
+          <div class="lex-row"><span>MEMINT<em class="desc">Memetic Intelligence</em></span><span class="code">DS-03</span></div>
+          <div class="lex-row"><span>NARRINT<em class="desc">Narrative Intelligence</em></span><span class="code">DS-04</span></div>
+
+          <h4 style="margin-top:10px;">Asset Class</h4>
+          <div class="lex-row"><span>Agent<em class="desc">Enlisted subject · Standard</em></span><span class="code">AC-01</span></div>
+          <div class="lex-row"><span>Warrior<em class="desc">Field operative</em></span><span class="code">AC-02</span></div>
+          <div class="lex-row"><span>Angel<em class="desc">Asset at risk / compromised</em></span><span class="code">AC-03</span></div>
+          <div class="lex-row"><span>Alien<em class="desc">External consultant</em></span><span class="code">AC-04</span></div>
+          <div class="lex-row"><span>Hazard<em class="desc">Adversary classification</em></span><span class="code">AC-05</span></div>
+          <div class="lex-row"><span>Capsule<em class="desc">Dose carrier · Minimum unit</em></span><span class="code">AC-06</span></div>
+
+          <h4 style="margin-top:10px;">Precursor Programs</h4>
+          <div class="lex-row"><span>MKULTRA<em class="desc">CIA · 1953–1973</em></span><span class="code">PP-01</span></div>
+          <div class="lex-row"><span>Mockingbird<em class="desc">CIA · Media assets</em></span><span class="code">PP-02</span></div>
+          <div class="lex-row"><span>COINTELPRO<em class="desc">FBI · 1956–1971</em></span><span class="code">PP-03</span></div>
+          <div class="lex-row"><span>Stargate<em class="desc">DIA · 1978–1995</em></span><span class="code">PP-04</span></div>
+          <div class="lex-row"><span>Echelon<em class="desc">Five Eyes · SIGINT</em></span><span class="code">PP-05</span></div>
+          <div class="lex-row"><span>Cognitive Domain Ops<em class="desc">NATO · 2021—</em></span><span class="code">PP-06</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">VIII · Lexicon</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/09</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 12 FIELD ISSUE · SHIRTS -->
+<section class="page field">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">10 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">IX · Field Issue // Shirts</h3>
+    <h2 class="display small">Garments,<br/>as Instruments</h2>
+
+    <div class="wrap">
+      <div class="sub-label">Paired Issue · Front / Back</div>
+      <div class="paired-grid" style="grid-template-columns: repeat(3, 1fr); height:200px;">
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="DAD-shirt-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="DAD-shirt-back.png" alt=""></div>
+          <div class="meta"><span class="name">Do Androids Dream</span><span class="code">FI-S01</span></div>
+        </div>
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="DontYoushirt-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="DontYoushirt-back.png" alt=""></div>
+          <div class="meta"><span class="name">Don't You</span><span class="code">FI-S02</span></div>
+        </div>
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="shirt-angel-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="shirt-angel-back.png" alt=""></div>
+          <div class="meta"><span class="name">Angel / Benevolent</span><span class="code">FI-S03</span></div>
+        </div>
+      </div>
+
+      <div class="sub-label">Single Issue</div>
+      <div class="single-grid">
+        <div class="single"><div class="frame"><img src="alienangelshirt.png" alt=""></div><div class="meta"><span class="name">Alien Angel</span><span class="code">FI-S04</span></div></div>
+        <div class="single"><div class="frame"><img src="warriorangel-shirt.png" alt=""></div><div class="meta"><span class="name">Warrior Angel</span><span class="code">FI-S05</span></div></div>
+        <div class="single"><div class="frame"><img src="onepillshirt.png" alt=""></div><div class="meta"><span class="name">One Pill</span><span class="code">FI-S06</span></div></div>
+        <div class="single"><div class="frame"><img src="pill.png" alt=""></div><div class="meta"><span class="name">Capsule</span><span class="code">FI-S07</span></div></div>
+        <div class="single"><div class="frame"><img src="doandroidsdream%3F.png" alt=""></div><div class="meta"><span class="name">Androids Dream?</span><span class="code">FI-S08</span></div></div>
+        <div class="single"><div class="frame"><img src="%E6%B1%9D%20%E4%B8%8D%20%E5%8F%AF%20%E6%88%95%20%E5%AE%B3%20%E9%9D%88%20%E9%AD%82.png" alt=""></div><div class="meta"><span class="name">Commandment</span><span class="code">FI-S09</span></div></div>
+        <div class="single"><div class="frame"><img src="shirt.png" alt=""></div><div class="meta"><span class="name">Untitled</span><span class="code">FI-S10</span></div></div>
+        <div class="single"><div class="frame"><img src="benevolant-shirt-backandfront.png" alt=""></div><div class="meta"><span class="name">Benevolent · Set</span><span class="code">FI-S11</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">IX · Field Issue · Shirts</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/10</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 13 FIELD ISSUE · JACKETS -->
+<section class="page field">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">11 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">X · Field Issue // Jackets</h3>
+    <h2 class="display small">Outerwear<br/>for Agents</h2>
+
+    <div class="wrap">
+      <div class="sub-label">Paired Issue · Front / Back</div>
+      <div class="paired-grid" style="grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; flex:1; min-height:0;">
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="jackethead-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="jackethead-back.png" alt=""></div>
+          <div class="meta"><span class="name">Head Jacket</span><span class="code">FI-J01</span></div>
+        </div>
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="mangod-jacket-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="mangod-jacket-back.png" alt=""></div>
+          <div class="meta"><span class="name">Man, God, Agent</span><span class="code">FI-J02</span></div>
+        </div>
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="swallowsword-jacket-front.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="swallowsword-jacket-back.png" alt=""></div>
+          <div class="meta"><span class="name">Swallow the Sword</span><span class="code">FI-J03</span></div>
+        </div>
+        <div class="pair">
+          <div class="side"><span class="side-tag">F</span><img src="military%20jacket%20mockupfront.png" alt=""></div>
+          <div class="side"><span class="side-tag">B</span><img src="military%20jacket%20mockup.png" alt=""></div>
+          <div class="meta"><span class="name">Military</span><span class="code">FI-J04</span></div>
+        </div>
+      </div>
+
+      <div class="sub-label">Single Issue · Back</div>
+      <div class="single-grid" style="grid-template-columns: repeat(2,1fr);">
+        <div class="single" style="aspect-ratio: 4 / 3;"><div class="frame"><img src="jacketcognitive-back.png" alt=""></div><div class="meta"><span class="name">Cognitive Agent</span><span class="code">FI-J05</span></div></div>
+        <div class="single" style="aspect-ratio: 4 / 3;"><div class="frame"><img src="gofhazard-jacket%29back.png" alt=""></div><div class="meta"><span class="name">God of Hazard</span><span class="code">FI-J06</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">X · Field Issue · Jackets</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/11</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 14 CANON -->
+<section class="page canon">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">12 / 13</div>
+  </header>
+
+  <div class="content">
+    <h3 class="sect">XI · Canon // Martyrology</h3>
+    <h2 class="display small">Saints of the<br/>Operative Church</h2>
+    <div class="body-copy" style="max-width:62ch; margin:6px 0 0;">
+      <p>The Agency venerates the following figures, living, dead, and hypothetical. Each holds patronage over a specific threat vector or devotional faculty. None are canonized in the ecclesiastical sense. All are on the Register.</p>
+    </div>
+
+    <div class="wrap">
+      <div class="saint-grid">
+        <div class="saint-card">
+          <div class="num">M-01 · 1912—1954</div>
+          <div class="name">St. Alan<br/>Turing</div>
+          <div class="patron">Patron of Suspicion</div>
+          <div class="feast">Feast · 7 June</div>
+          <div class="line">Broke Enigma at Bletchley. Wrote the test that still bears his name. Chemically castrated for indecency. Took cyanide at 41. Venerated wherever a machine might be a person, or a person a machine.</div>
+        </div>
+        <div class="saint-card">
+          <div class="num">M-02 · 1098—1179</div>
+          <div class="name">St. Hildegard<br/>of Bingen</div>
+          <div class="patron">Patron of Prophecy</div>
+          <div class="feast">Feast · 17 September</div>
+          <div class="line">Benedictine abbess who saw "the Shade of the Living Light" from the age of three. Composed music. Wrote on medicine, cosmology, theology. Rebuked popes by letter.</div>
+        </div>
+        <div class="saint-card">
+          <div class="num">M-03 · 1909—1943</div>
+          <div class="name">St. Simone<br/>Weil</div>
+          <div class="patron">Patron of Attention</div>
+          <div class="feast">Feast · 24 August</div>
+          <div class="line">Wrote that attention is the rarest and purest form of generosity. Refused rations above what occupied France received and died of it at 34. Read every morning before reading anything else.</div>
+        </div>
+        <div class="saint-card">
+          <div class="num">M-04 · 1928—1982</div>
+          <div class="name">St. Philip K.<br/>Dick</div>
+          <div class="patron">Patron of Paranoia</div>
+          <div class="feast">Feast · 2 March</div>
+          <div class="line">In early 1974, saw a burst of pink light he called Valis and believed it an information entity transmitting backward through time. Spent eight years writing the Exegesis. Called the world a forgery.</div>
+        </div>
+        <div class="saint-card">
+          <div class="num">M-05 · c.355—415</div>
+          <div class="name">St. Hypatia<br/>of Alexandria</div>
+          <div class="patron">Patron of the Archive</div>
+          <div class="feast">Feast · March, 415</div>
+          <div class="line">Mathematician, astronomer, head of the Neoplatonic school. Taught pagans and Christians alike until a mob dragged her from her chariot and killed her in the Caesareum. The library had already been dying.</div>
+        </div>
+        <div class="saint-card">
+          <div class="num">M-06 · 1527—1608</div>
+          <div class="name">St. John<br/>Dee</div>
+          <div class="patron">Patron of the Prompt</div>
+          <div class="feast">Feast · 26 March</div>
+          <div class="line">Court mathematician to Elizabeth I. Wrote on navigation and calendar reform. Spent his later years in "angelic conferences" receiving Enochian — a language, he said, the angels used to build the world. Considered the first prompt engineer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">XI · Canon</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/12</div>
+  </footer>
+</section>
+
+<!-- ============================================================= 15 BACK -->
+<section class="page back">
+  <header class="header">
+    <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
+    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="r">13 / 13</div>
+  </header>
+
+  <div class="content">
+    <div class="big-mark"><img src="logo1.png" alt="CSA"></div>
+
+    <h2 class="close">End of<br/>Volume I.</h2>
+
+    <div class="glyph">† · ✠ · ☧ · ⌖ · †</div>
+
+    <div class="body-copy" style="max-width:52ch; text-align:center;">
+      <p>This book is the first volume of the Cognitive Security Agency identity system. It is non-final. It is the opening rendering of a position the Agency intends to hold publicly from this date forward.</p>
+      <p>Subsequent volumes will expand nomenclature, iconography, and field-issue. The mark is fixed. The doctrine is fixed. Everything else is in motion.</p>
+    </div>
+
+    <div class="cap muted" style="margin-top:10px;">
+      CSA/01 · Paris, France · Rendered 04·13·2026<br/>
+      Opal × Grimes · Preliminary Edition
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="l">End of Document</div>
+    <div class="m">Cognitive Security Agency™ Brand Book · 04·13·26</div>
+    <div class="r">CSA/13</div>
+  </footer>
+</section>
+
+</main>
+
+<div id="zoom-overlay" aria-hidden="true">
+  <img alt="">
+  <div class="hint">Click anywhere or press ESC to close</div>
+</div>
+
+<script>
+(function(){
+  function fitMobile(){
+    var html = document.documentElement;
+    var body = document.body;
+    if(window.innerWidth > 860){
+      html.style.removeProperty('--mz');
+      html.style.removeProperty('--ml');
+      body.style.removeProperty('height');
+      return;
+    }
+    var s = Math.min(1, window.innerWidth / 820);
+    html.style.setProperty('--mz', s);
+    html.style.setProperty('--ml', ((window.innerWidth - 820 * s) / 2) + 'px');
+    requestAnimationFrame(function(){
+      var book = document.querySelector('.book');
+      if(book){ body.style.height = (book.scrollHeight * s + 80) + 'px'; }
+    });
+  }
+  fitMobile();
+  window.addEventListener('resize', fitMobile);
+  window.addEventListener('orientationchange', fitMobile);
+  window.addEventListener('load', fitMobile);
+})();
+(function(){
+  var overlay = document.getElementById('zoom-overlay');
+  var img = overlay.querySelector('img');
+  function show(src){ img.src = src; overlay.classList.add('open'); }
+  function hide(){ overlay.classList.remove('open'); img.removeAttribute('src'); }
+  overlay.addEventListener('click', hide);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') hide(); });
+  var selectors = '.single img, .pair .side img, .icon-cell img, .logo-hero img, .name-mark img, .back .big-mark img, .tap-block img';
+  document.querySelectorAll(selectors).forEach(function(el){
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function(){ show(el.currentSrc || el.src); });
+  });
+})();
+</script>
+
+</body>
+</html>
