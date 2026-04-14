@@ -380,7 +380,7 @@
   /* ============================ NOMENCLATURE — FIX WRAP ============================ */
   .nomenclature .content{ display:flex; flex-direction:column; }
   .nomenclature .grid{
-    display:grid; grid-template-columns: 1.8fr 1fr; gap:26px; flex:1; min-height:0;
+    display:grid; display: flex; flex-direction: column; gap:26px; flex:1; min-height:0;
     margin-top:14px;
   }
   .nomenclature .body-copy{ font-size:11px; }
@@ -410,6 +410,7 @@
   }
   .name-mark{
     border:1px solid var(--ink);
+    flex: 0 0 70%;
     /* aspect-ratio: 1 / 1.2; */ flex: 1; margin-bottom: 20px;
     display:flex; align-items:center; justify-content:center;
     padding:20px; position:relative;
@@ -781,7 +782,7 @@
 <section class="page mandate">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">02 / 13</div>
   </header>
 
@@ -821,7 +822,7 @@
 <section class="page doctrine">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">03 / 13</div>
   </header>
 
@@ -836,9 +837,9 @@
     </div>
 
     <div style="margin-top: 24px; border-top: 1px solid var(--ink); padding-top: 16px;">
-      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-         <img src="cognitivehead2.png" alt="Cognitive Protocol" style="height: 180px; filter: grayscale(100%); mix-blend-mode: multiply;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
          <div class="cap" style="text-align:right;">FIG. 2 · Extracted Latent Protocol<br/>Subject: Unshielded Volatile</div>
+         <img src="warriorgoddess.png" alt="Cognitive Protocol" style="width: 100%; height: 260px; object-fit: cover; object-position: center 20%; filter: grayscale(100%); mix-blend-mode: multiply;">
       </div>
     </div>
 
@@ -855,7 +856,7 @@
 <section class="page logo-page">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">04 / 13</div>
   </header>
 
@@ -907,7 +908,7 @@
 <section class="page nomenclature">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">05 / 13</div>
   </header>
 
@@ -930,7 +931,7 @@
 
       <div class="name-mark">
         <div class="lbl">The Mark</div>
-        <div style="font-family: var(--doors); font-size: 32px; line-height: 1; text-align: left; text-transform: uppercase;">Cognitive<br/>Security<br/>Agency</div>
+        <div style="font-family: var(--doors); font-size: 64px; line-height: 0.9; text-align: center; text-transform: uppercase;">Cognitive<br/>Security<br/>Agency</div>
         <div class="sub">Typographic substitute · DOORS rendering</div>
       </div>
     </div>
@@ -947,7 +948,7 @@
 <section class="page chromatics">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">06 / 13</div>
   </header>
 
@@ -1017,7 +1018,7 @@
 <section class="page lexis">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">07 / 13</div>
   </header>
 
@@ -1063,7 +1064,7 @@
 <section class="page refs">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">08 / 13</div>
   </header>
 
@@ -1149,7 +1150,7 @@
 <section class="page lexicon">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">09 / 13</div>
   </header>
 
@@ -1186,7 +1187,7 @@
 <section class="page axioms">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">09.5 / 13</div>
   </header>
 
@@ -1225,7 +1226,7 @@
 <section class="page field">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">10 / 13</div>
   </header>
 
@@ -1281,7 +1282,7 @@
 <section class="page field">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">11 / 13</div>
   </header>
 
@@ -1333,7 +1334,7 @@
 <section class="page canon">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">12 / 13</div>
   </header>
 
@@ -1390,7 +1391,7 @@
 <section class="page back">
   <header class="header">
     <div class="l">CSA/BRANDBOOK/VOL.I/REV·04·13·26</div>
-    <div class="m"><img src="logo1.png" alt="CSA"></div>
+    <div class="m"></div>
     <div class="r">13 / 13</div>
   </header>
 
